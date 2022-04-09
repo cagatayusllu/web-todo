@@ -1,0 +1,17 @@
+#todo-button {
+  width: 100%;
+}
+
+#todo-li {
+
+  list-style-type: none;
+}
+
+#todo-a {
+    text-decoration: none;
+    color: #5E6472;
+}
+
+#todo-li-button {
+    padding: 0;
+}

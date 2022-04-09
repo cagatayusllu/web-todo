@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/todo.css') }}">
+{% block title %} Todo list {% endblock%}
+
+
+{% block content %}
+    
+    <div class="main-body">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Todo List</h5>
+              <div>
+                  <p>Add a new todo item: </p>
+                <form action="{{ url_for('add') }}" method="POST">
+                    <input class="form-control" type="text" name="todoitem">
+                    <button class="btn btn-light" type="submit" value="Add Item" id="todo-button">Add</button>
+                </form>
+            </div>
+            <div style="padding-top: 1em;">
+                <h6>Do</h6>
+                <ul>
+                    {% for todo in incomplete %}
+                    <li id="todo-li">{{ todo.text }} 
+                       <button class="btn btn-light" id="todo-li-button"> <a href="{{ url_for('complete', id=todo.id) }}" id="todo-a">Done</a> </button>
+                    </li>
+                    {% endfor %}    
+                </ul>
+                <h6>Done</h6>
+                <ul>
+                    {% for todo in complete %}
+                    <li id="todo-li">{{ todo.text }}</li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+          </div>
+    </div>
+{% endblock %}

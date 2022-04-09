@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} {% endblock %}
+
+{% block content %}
+    <div class="main-body">
+  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <h6 class="card-subtitle">Update your Email</h6>
+          <form action="#" method="POST">
+              <input type="email" name="email" class="form-control" id="profile-input" placeholder="Enter Email" value="{{ email if email}}">
+              <button class="btn btn-light" type="submit" value="submit" id="profile-button">Update</button>
+          </form>
+          {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+  {% endwith %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
