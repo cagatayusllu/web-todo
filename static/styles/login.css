@@ -1,10 +1,16 @@
 #login-input {
-    margin: auto;
-    margin-top: 3em;    
+  margin: auto;
+  margin-top: 3em;
 }
 
 #login-button {
-    width: 50%;
-    margin: auto;
-    margin-top: 3em;
+  width: 50%;
+  margin: auto;
+  margin-top: 3em;
+  border-color: white;
+}
+#login-button:hover {
+  background-color: darkblue;
+  color: white;
+  border: darkblue;
 }

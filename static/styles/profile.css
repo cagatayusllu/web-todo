@@ -8,3 +8,10 @@
       margin: auto;
       margin-top: 3em;
   }
+
+  #profile-button:hover {
+    background-color: darkblue;
+    color: white;
+    border: darkblue;
+  }
+  
