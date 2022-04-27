@@ -4,8 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta
 
 app = Flask(__name__)
-app.secret_key = "supersecret"
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL').replace('postgres://', 'postgresql://', 1)
+app.secret_key = environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = timedelta(days=1)
 
