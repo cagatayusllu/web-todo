@@ -1,4 +1,4 @@
-from os import environ
+import os
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta
@@ -6,7 +6,7 @@ from datetime import timedelta
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = "super secret key"
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL').replace('postgres://', 'postgresql://', 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres://', 'postgresql://', 1)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = timedelta(days=1)
 
