@@ -20,20 +20,17 @@
         <a class="navbar-brand" href="{{url_for('todo')}}">
           Todo
         </a>
-        <form class="d-flex">
+        <div class="d-flex">
           <button class="btn btn-light" ><a style="text-decoration: none; color: black;" href="{{ url_for('profile')}}"> Profile </a></button>
           <button class="btn btn-light" ><a style="text-decoration: none; color: black;" href="{{ url_for('logout')}}">Logout</a></button>
-          <button class="btn btn-light" id="darkTheme" onclick="doge()">?</button>
-        </form>
+          <button class="btn btn-light" id="darkTheme"><i class="bi bi-moon-fill"></i></button>
+        </div>
       </div>
     </nav>
     <div class="container-fluid">
     {% block content %} {% endblock %}
     </div>
-    <script>
-      function doge() {
-        document.body.style.backgroundImage = "url(static/icons/doge.png)";
-      }
+    <script src="../js/common.js">
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
