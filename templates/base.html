@@ -31,8 +31,10 @@
     {% block content %} {% endblock %}
     </div>
     <script>
+      let dark = false
       function darkTheme() {
         document.body.style.backgroundColor = "yellow";
+        let dark = true
       }
       let darkThemeBtn = document.getElementById("darkTheme");
          darkThemeBtn.addEventListener('click', event => {
